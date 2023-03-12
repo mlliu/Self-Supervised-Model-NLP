@@ -8,6 +8,7 @@ from transformers import get_scheduler
 from transformers import AutoModelForSequenceClassification
 import argparse
 import subprocess
+import matplotlib.pyplot as plt
 
 
 def print_gpu_memory():
@@ -127,7 +128,8 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
     )
 
     loss = torch.nn.CrossEntropyLoss()
-
+    train_acc=[]
+    val_acc=[]
     for epoch in range(num_epochs):
 
         # put the model in training mode (important that this is done each epoch,
@@ -159,7 +161,7 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
 
             output = mymodel(input_ids=input_ids,attention_mask=attention_mask) #logits
             predictions = output.logits
-            model_loss = loss(bacth['labels'],predictions)
+            model_loss = loss(predictions, batch['labels'].to(device))
 
             model_loss.backward()
             optimizer.step()
@@ -173,13 +175,16 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
             train_accuracy.add_batch(predictions=predictions, references=batch['labels'])
 
         # print evaluation metrics
+        curr_train_acc = train_accuracy.compute()
+        train_acc.append(curr_train_acc['accuracy'])
         print(f" ===> Epoch {epoch + 1}")
-        print(f" - Average training metrics: accuracy={train_accuracy.compute()}")
+        print(f" - Average training metrics: accuracy={curr_train_acc}")
 
         # normally, validation would be more useful when training for many epochs
         val_accuracy = evaluate_model(mymodel, validation_dataloader, device)
+        val_acc.append(val_accuracy['accuracy'])
         print(f" - Average validation metrics: accuracy={val_accuracy}")
-
+    return train_acc,val_acc
 
 def pre_process(model_name, batch_size, device, small_subset):
     # download dataset
@@ -272,13 +277,22 @@ if __name__ == "__main__":
                                                                                              args.small_subset)
 
     print(" >>>>>>>>  Starting training ... ")
-    train(pretrained_model, args.num_epochs, train_dataloader, validation_dataloader, args.device, args.lr)
+    train_acc,val_acc = train(pretrained_model, args.num_epochs, train_dataloader, validation_dataloader, args.device, args.lr)
 
     # print the GPU memory usage just to make sure things are alright
     print_gpu_memory()
 
-    val_accuracy = ...
+    val_accuracy = evaluate_model(pretrained_model, validation_dataloader, args.device)
     print(f" - Average DEV metrics: accuracy={val_accuracy}")
 
-    test_accuracy = ...
+    test_accuracy = evaluate_model(pretrained_model, test_dataloader, args.device)
     print(f" - Average TEST metrics: accuracy={test_accuracy}")
+
+    plt.figure(figsize=(10, 5))
+    plt.title("Training accuracy")
+    #plt.plot(val_losses, label="val")
+    plt.plot(train_acc, label="train")
+    plt.xlabel("iterations")
+    plt.ylabel("accuracy")
+    plt.legend()
+    plt.show()
