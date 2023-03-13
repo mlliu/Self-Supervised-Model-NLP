@@ -264,12 +264,14 @@ if __name__ == "__main__":
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--model", type=str, default="distilbert-base-uncased")
+    
 
     args = parser.parse_args()
     print(f"Specified arguments: {args}")
 
     assert type(args.small_subset) == bool, "small_subset must be a boolean"
 
+    print("the value of small_subset: ",args.small_subset)
     # load the data and models
     pretrained_model, train_dataloader, validation_dataloader, test_dataloader = pre_process(args.model,
                                                                                              args.batch_size,
@@ -290,7 +292,7 @@ if __name__ == "__main__":
 
     plt.figure(figsize=(10, 5))
     plt.title("Training accuracy")
-    #plt.plot(val_acc, label="val")
+    plt.plot(val_acc, label="val")
     plt.plot(train_acc, label="train")
     plt.xlabel("iterations")
     plt.ylabel("accuracy")
