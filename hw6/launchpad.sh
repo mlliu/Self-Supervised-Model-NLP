@@ -9,7 +9,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=12:00:00
 #SBATCH --job-name="HW6 CS 601.471/671 homework"
-
+#SBATCH --mem-per-cpu=20G
 
 module load anaconda
 
@@ -18,7 +18,7 @@ module load anaconda
 
 conda activate toy_classification_env # open the Python environment
 
-pip install -r requirements.txt # install Python dependencies
+#pip install -r requirements.txt # install Python dependencies
 
 # runs your code
-srun python classification.py  --experiment "overfit" --small_subset --device cuda --model "distilbert-base-uncased" --batch_size "32" --lr 1e-4 --num_epochs 20
+srun python classification.py  --experiment "overfit"  --device cuda --model "distilbert-base-uncased" --batch_size "64" --lr 1e-4 --num_epochs 30
