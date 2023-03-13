@@ -290,9 +290,10 @@ if __name__ == "__main__":
 
     plt.figure(figsize=(10, 5))
     plt.title("Training accuracy")
-    #plt.plot(val_losses, label="val")
+    #plt.plot(val_acc, label="val")
     plt.plot(train_acc, label="train")
     plt.xlabel("iterations")
     plt.ylabel("accuracy")
     plt.legend()
+    plt.savefig('tranining_accuracy.png')
     plt.show()
