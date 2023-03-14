@@ -1,0 +1,57 @@
+Could not find conda environment: toy_classification_env
+You can list all discoverable environments with `conda info --envs`.
+
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: scikit-learn==0.24.2 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (0.24.2)
+Requirement already satisfied: tqdm==4.64.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (4.64.1)
+Requirement already satisfied: transformers==4.26.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (4.26.1)
+Requirement already satisfied: datasets==2.10.0 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (2.10.0)
+Requirement already satisfied: evaluate==0.4.0 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (0.4.0)
+Requirement already satisfied: torch==1.13.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.13.1)
+Requirement already satisfied: scipy>=0.19.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (1.5.0)
+Requirement already satisfied: numpy>=1.13.3 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (1.18.5)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: joblib>=0.11 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: packaging>=20.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (20.4)
+Requirement already satisfied: regex!=2019.12.17 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (2020.6.8)
+Requirement already satisfied: huggingface-hub<1.0,>=0.11.0 in /home/mliu121/.local/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (0.13.1)
+Requirement already satisfied: requests in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (2.24.0)
+Requirement already satisfied: tokenizers!=0.11.3,<0.14,>=0.11.1 in /home/mliu121/.local/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (0.13.2)
+Requirement already satisfied: filelock in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (3.0.12)
+Requirement already satisfied: pyyaml>=5.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (5.3.1)
+Requirement already satisfied: responses<0.19 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.18.0)
+Requirement already satisfied: pandas in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (1.0.5)
+Requirement already satisfied: multiprocess in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.70.14)
+Requirement already satisfied: pyarrow>=6.0.0 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (11.0.0)
+Requirement already satisfied: dill<0.3.7,>=0.3.0 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.3.6)
+Requirement already satisfied: aiohttp in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (3.8.4)
+Requirement already satisfied: xxhash in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (3.2.0)
+Requirement already satisfied: fsspec[http]>=2021.11.1 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (2023.3.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.7.99)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.10.3.66)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.7.99)
+Requirement already satisfied: typing-extensions in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (4.5.0)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (8.5.0.96)
+Requirement already satisfied: six in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from packaging>=20.0->transformers==4.26.1->-r requirements.txt (line 3)) (1.15.0)
+Requirement already satisfied: pyparsing>=2.0.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from packaging>=20.0->transformers==4.26.1->-r requirements.txt (line 3)) (2.4.7)
+Requirement already satisfied: certifi>=2017.4.17 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (2020.6.20)
+Requirement already satisfied: idna<3,>=2.5 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (2.10)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (1.25.9)
+Requirement already satisfied: chardet<4,>=3.0.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (3.0.4)
+Requirement already satisfied: pytz>=2017.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from pandas->datasets==2.10.0->-r requirements.txt (line 4)) (2020.1)
+Requirement already satisfied: python-dateutil>=2.6.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from pandas->datasets==2.10.0->-r requirements.txt (line 4)) (2.8.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (6.0.4)
+Requirement already satisfied: aiosignal>=1.1.2 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.3.1)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (4.0.2)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.3.3)
+Requirement already satisfied: attrs>=17.3.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (19.3.0)
+Requirement already satisfied: yarl<2.0,>=1.0 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.8.2)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (3.1.0)
+Requirement already satisfied: setuptools in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from nvidia-cublas-cu11==11.10.3.66; platform_system == "Linux"->torch==1.13.1->-r requirements.txt (line 6)) (49.2.0.post20200714)
+Requirement already satisfied: wheel in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from nvidia-cublas-cu11==11.10.3.66; platform_system == "Linux"->torch==1.13.1->-r requirements.txt (line 6)) (0.34.2)
+usage: classification.py [-h] [--experiment EXPERIMENT] [--small_subset]
+                         [--num_epochs NUM_EPOCHS] [--lr LR]
+                         [--batch_size BATCH_SIZE] [--device DEVICE]
+                         [--model MODEL]
+classification.py: error: unrecognized arguments: False
+srun: error: icgpu02: task 0: Exited with exit code 2

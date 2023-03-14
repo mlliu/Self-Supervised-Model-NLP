@@ -102,7 +102,7 @@ def evaluate_model(model, dataloader, device):
     return dev_accuracy.compute()
 
 
-def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, lr):
+def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, lr,test_dataloader):
     """ Train a PyTorch Module
 
     :param torch.nn.Module mymodel: the model to be trained
@@ -130,6 +130,7 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
     loss = torch.nn.CrossEntropyLoss()
     train_acc=[]
     val_acc=[]
+    test_acc = []
     for epoch in range(num_epochs):
 
         # put the model in training mode (important that this is done each epoch,
@@ -184,6 +185,11 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
         val_accuracy = evaluate_model(mymodel, validation_dataloader, device)
         val_acc.append(val_accuracy['accuracy'])
         print(f" - Average validation metrics: accuracy={val_accuracy}")
+
+        #also compute the accuracy on test dataset
+        test_accuracy = evaluate_model(mymodel, test_dataloader, device)
+        test_acc.append(val_accuracy['accuracy'])
+        print(f" - Average test metrics: accuracy={test_accuracy}")
     return train_acc,val_acc
 
 def pre_process(model_name, batch_size, device, small_subset):
@@ -279,7 +285,7 @@ if __name__ == "__main__":
                                                                                              args.small_subset)
 
     print(" >>>>>>>>  Starting training ... ")
-    train_acc,val_acc = train(pretrained_model, args.num_epochs, train_dataloader, validation_dataloader, args.device, args.lr)
+    train_acc,val_acc = train(pretrained_model, args.num_epochs, train_dataloader, validation_dataloader, args.device, args.lr, test_dataloader)
 
     # print the GPU memory usage just to make sure things are alright
     print_gpu_memory()
@@ -297,5 +303,6 @@ if __name__ == "__main__":
     plt.xlabel("iterations")
     plt.ylabel("accuracy")
     plt.legend()
-    plt.savefig('tranining_accuracy.png')
+    figure_name = "lr_"+str(args.lr)+"_epoch_"+str(args.num_epochs)+".png"
+    plt.savefig(figure_name)
     #plt.show()

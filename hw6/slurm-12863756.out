@@ -1,0 +1,205 @@
+Found cached dataset boolq (/home/mliu121/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=64, device='cuda', experiment='overfit', lr=0.0001, model='distilbert-base-uncased', num_epochs=30, small_subset=False)
+the value of small_subset:  False
+Loading the dataset ...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 859.84it/s]
+Some weights of the model checkpoint at distilbert-base-uncased were not used when initializing DistilBertForSequenceClassification: ['vocab_layer_norm.bias', 'vocab_transform.bias', 'vocab_projector.bias', 'vocab_transform.weight', 'vocab_projector.weight', 'vocab_layer_norm.weight']
+- This IS expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of DistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight', 'pre_classifier.weight', 'pre_classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.618875}
+ - Average validation metrics: accuracy={'accuracy': 0.634862385321101}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.717375}
+ - Average validation metrics: accuracy={'accuracy': 0.6737003058103975}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.830625}
+ - Average validation metrics: accuracy={'accuracy': 0.6703363914373088}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.88225}
+ - Average validation metrics: accuracy={'accuracy': 0.6813455657492354}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.916375}
+ - Average validation metrics: accuracy={'accuracy': 0.6669724770642201}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.953125}
+ - Average validation metrics: accuracy={'accuracy': 0.6850152905198776}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.968375}
+ - Average validation metrics: accuracy={'accuracy': 0.6837920489296636}
+Epoch 8 training:
+ ===> Epoch 8
+ - Average training metrics: accuracy={'accuracy': 0.9775}
+ - Average validation metrics: accuracy={'accuracy': 0.6761467889908257}
+Epoch 9 training:
+ ===> Epoch 9
+ - Average training metrics: accuracy={'accuracy': 0.9815}
+ - Average validation metrics: accuracy={'accuracy': 0.6963302752293578}
+Epoch 10 training:
+ ===> Epoch 10
+ - Average training metrics: accuracy={'accuracy': 0.987}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+Epoch 11 training:
+ ===> Epoch 11
+ - Average training metrics: accuracy={'accuracy': 0.990375}
+ - Average validation metrics: accuracy={'accuracy': 0.691743119266055}
+Epoch 12 training:
+ ===> Epoch 12
+ - Average training metrics: accuracy={'accuracy': 0.992375}
+ - Average validation metrics: accuracy={'accuracy': 0.6847094801223241}
+Epoch 13 training:
+ ===> Epoch 13
+ - Average training metrics: accuracy={'accuracy': 0.99225}
+ - Average validation metrics: accuracy={'accuracy': 0.6978593272171254}
+Epoch 14 training:
+ ===> Epoch 14
+ - Average training metrics: accuracy={'accuracy': 0.993625}
+ - Average validation metrics: accuracy={'accuracy': 0.6819571865443425}
+Epoch 15 training:
+ ===> Epoch 15
+ - Average training metrics: accuracy={'accuracy': 0.994375}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+Epoch 16 training:
+ ===> Epoch 16
+ - Average training metrics: accuracy={'accuracy': 0.99625}
+ - Average validation metrics: accuracy={'accuracy': 0.6914373088685015}
+Epoch 17 training:
+ ===> Epoch 17
+ - Average training metrics: accuracy={'accuracy': 0.995375}
+ - Average validation metrics: accuracy={'accuracy': 0.6859327217125383}
+Epoch 18 training:
+ ===> Epoch 18
+ - Average training metrics: accuracy={'accuracy': 0.997375}
+ - Average validation metrics: accuracy={'accuracy': 0.7027522935779816}
+Epoch 19 training:
+ ===> Epoch 19
+ - Average training metrics: accuracy={'accuracy': 0.997375}
+ - Average validation metrics: accuracy={'accuracy': 0.7}
+Epoch 20 training:
+ ===> Epoch 20
+ - Average training metrics: accuracy={'accuracy': 0.998125}
+ - Average validation metrics: accuracy={'accuracy': 0.7045871559633028}
+Epoch 21 training:
+ ===> Epoch 21
+ - Average training metrics: accuracy={'accuracy': 0.998}
+ - Average validation metrics: accuracy={'accuracy': 0.7058103975535168}
+Epoch 22 training:
+ ===> Epoch 22
+ - Average training metrics: accuracy={'accuracy': 0.9985}
+ - Average validation metrics: accuracy={'accuracy': 0.7015290519877676}
+Epoch 23 training:
+ ===> Epoch 23
+ - Average training metrics: accuracy={'accuracy': 0.998375}
+ - Average validation metrics: accuracy={'accuracy': 0.6966360856269113}
+Epoch 24 training:
+ ===> Epoch 24
+ - Average training metrics: accuracy={'accuracy': 0.999}
+ - Average validation metrics: accuracy={'accuracy': 0.6996941896024464}
+Epoch 25 training:
+ ===> Epoch 25
+ - Average training metrics: accuracy={'accuracy': 0.998875}
+ - Average validation metrics: accuracy={'accuracy': 0.6960244648318042}
+Epoch 26 training:
+ ===> Epoch 26
+ - Average training metrics: accuracy={'accuracy': 0.999}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+Epoch 27 training:
+ ===> Epoch 27
+ - Average training metrics: accuracy={'accuracy': 0.9995}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+Epoch 28 training:
+ ===> Epoch 28
+ - Average training metrics: accuracy={'accuracy': 0.999125}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+Epoch 29 training:
+ ===> Epoch 29
+ - Average training metrics: accuracy={'accuracy': 0.999375}
+ - Average validation metrics: accuracy={'accuracy': 0.6966360856269113}
+Epoch 30 training:
+ ===> Epoch 30
+ - Average training metrics: accuracy={'accuracy': 0.999625}
+ - Average validation metrics: accuracy={'accuracy': 0.6969418960244649}
+torch.cuda.memory_allocated: 0.502843GB
+torch.cuda.memory_reserved: 6.277344GB
+torch.cuda.max_memory_reserved: 6.277344GB
+Mon Mar 13 18:20:55 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   60C    P0   278W / 300W |  49439MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   63C    P0   303W / 300W |  46439MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   45C    P0   176W / 300W |  22058MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   28C    P0    43W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   7350MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      57956      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
+|    1   11    0      65230      C   ...sification_env/bin/python     6629MiB |
+|    1    7    0      65245      C   ...sification_env/bin/python     6629MiB |
+|    1    8    0      65247      C   ...sification_env/bin/python     6629MiB |
+|    1   13    0      65249      C   ...sification_env/bin/python     6629MiB |
+|    1   12    0      65253      C   ...sification_env/bin/python     6629MiB |
+|    1   10    0      65255      C   ...sification_env/bin/python     6629MiB |
+|    1    9    0      65257      C   ...sification_env/bin/python     6629MiB |
+|    2    9    0        486      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
+|    2    7    0      65460      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
+|    2    8    0      65527      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6969418960244649}
+ - Average TEST metrics: accuracy={'accuracy': 0.7035739313244569}

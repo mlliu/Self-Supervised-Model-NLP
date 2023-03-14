@@ -1,0 +1,211 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: scikit-learn==0.24.2 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (0.24.2)
+Requirement already satisfied: tqdm==4.64.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (4.64.1)
+Requirement already satisfied: transformers==4.26.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (4.26.1)
+Requirement already satisfied: datasets==2.10.0 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (2.10.0)
+Requirement already satisfied: evaluate==0.4.0 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (0.4.0)
+Requirement already satisfied: torch==1.13.1 in /home/mliu121/.local/lib/python3.8/site-packages (from -r requirements.txt (line 6)) (1.13.1)
+Requirement already satisfied: scipy>=0.19.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (1.5.0)
+Requirement already satisfied: numpy>=1.13.3 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (1.18.5)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: joblib>=0.11 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from scikit-learn==0.24.2->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: filelock in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (3.0.12)
+Requirement already satisfied: huggingface-hub<1.0,>=0.11.0 in /home/mliu121/.local/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (0.13.1)
+Requirement already satisfied: tokenizers!=0.11.3,<0.14,>=0.11.1 in /home/mliu121/.local/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (0.13.2)
+Requirement already satisfied: pyyaml>=5.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (5.3.1)
+Requirement already satisfied: regex!=2019.12.17 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (2020.6.8)
+Requirement already satisfied: packaging>=20.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (20.4)
+Requirement already satisfied: requests in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from transformers==4.26.1->-r requirements.txt (line 3)) (2.24.0)
+Requirement already satisfied: pyarrow>=6.0.0 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (11.0.0)
+Requirement already satisfied: dill<0.3.7,>=0.3.0 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.3.6)
+Requirement already satisfied: pandas in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (1.0.5)
+Requirement already satisfied: xxhash in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (3.2.0)
+Requirement already satisfied: aiohttp in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (3.8.4)
+Requirement already satisfied: fsspec[http]>=2021.11.1 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (2023.3.0)
+Requirement already satisfied: multiprocess in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.70.14)
+Requirement already satisfied: responses<0.19 in /home/mliu121/.local/lib/python3.8/site-packages (from datasets==2.10.0->-r requirements.txt (line 4)) (0.18.0)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.7.99)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.7.99)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (8.5.0.96)
+Requirement already satisfied: typing-extensions in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (4.5.0)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66; platform_system == "Linux" in /home/mliu121/.local/lib/python3.8/site-packages (from torch==1.13.1->-r requirements.txt (line 6)) (11.10.3.66)
+Requirement already satisfied: six in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from packaging>=20.0->transformers==4.26.1->-r requirements.txt (line 3)) (1.15.0)
+Requirement already satisfied: pyparsing>=2.0.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from packaging>=20.0->transformers==4.26.1->-r requirements.txt (line 3)) (2.4.7)
+Requirement already satisfied: chardet<4,>=3.0.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (2020.6.20)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (1.25.9)
+Requirement already satisfied: idna<3,>=2.5 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from requests->transformers==4.26.1->-r requirements.txt (line 3)) (2.10)
+Requirement already satisfied: python-dateutil>=2.6.1 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from pandas->datasets==2.10.0->-r requirements.txt (line 4)) (2.8.1)
+Requirement already satisfied: pytz>=2017.2 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from pandas->datasets==2.10.0->-r requirements.txt (line 4)) (2020.1)
+Requirement already satisfied: yarl<2.0,>=1.0 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.8.2)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (3.1.0)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (4.0.2)
+Requirement already satisfied: attrs>=17.3.0 in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (19.3.0)
+Requirement already satisfied: aiosignal>=1.1.2 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.3.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (6.0.4)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/mliu121/.local/lib/python3.8/site-packages (from aiohttp->datasets==2.10.0->-r requirements.txt (line 4)) (1.3.3)
+Requirement already satisfied: setuptools in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from nvidia-cuda-runtime-cu11==11.7.99; platform_system == "Linux"->torch==1.13.1->-r requirements.txt (line 6)) (49.2.0.post20200714)
+Requirement already satisfied: wheel in /data/apps/linux-centos8-cascadelake/gcc-9.3.0/anaconda3-2020.07-i7qavhiohb2uwqs4eqjeefzx3kp5jqdu/lib/python3.8/site-packages (from nvidia-cuda-runtime-cu11==11.7.99; platform_system == "Linux"->torch==1.13.1->-r requirements.txt (line 6)) (0.34.2)
+Found cached dataset boolq (/home/mliu121/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0001, model='distilbert-base-uncased', num_epochs=20, small_subset=False)
+Loading the dataset ...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 812.69it/s]
+Some weights of the model checkpoint at distilbert-base-uncased were not used when initializing DistilBertForSequenceClassification: ['vocab_transform.bias', 'vocab_transform.weight', 'vocab_layer_norm.bias', 'vocab_projector.weight', 'vocab_projector.bias', 'vocab_layer_norm.weight']
+- This IS expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing DistilBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of DistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert-base-uncased and are newly initialized: ['pre_classifier.weight', 'pre_classifier.bias', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.629}
+ - Average validation metrics: accuracy={'accuracy': 0.6519877675840978}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.689}
+ - Average validation metrics: accuracy={'accuracy': 0.681651376146789}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.788625}
+ - Average validation metrics: accuracy={'accuracy': 0.6709480122324158}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.891875}
+ - Average validation metrics: accuracy={'accuracy': 0.6541284403669725}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.9295}
+ - Average validation metrics: accuracy={'accuracy': 0.6779816513761467}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.954125}
+ - Average validation metrics: accuracy={'accuracy': 0.6480122324159021}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.972125}
+ - Average validation metrics: accuracy={'accuracy': 0.6761467889908257}
+Epoch 8 training:
+ ===> Epoch 8
+ - Average training metrics: accuracy={'accuracy': 0.9785}
+ - Average validation metrics: accuracy={'accuracy': 0.6810397553516819}
+Epoch 9 training:
+ ===> Epoch 9
+ - Average training metrics: accuracy={'accuracy': 0.98275}
+ - Average validation metrics: accuracy={'accuracy': 0.6889908256880733}
+Epoch 10 training:
+ ===> Epoch 10
+ - Average training metrics: accuracy={'accuracy': 0.988375}
+ - Average validation metrics: accuracy={'accuracy': 0.6880733944954128}
+Epoch 11 training:
+ ===> Epoch 11
+ - Average training metrics: accuracy={'accuracy': 0.988875}
+ - Average validation metrics: accuracy={'accuracy': 0.6886850152905198}
+Epoch 12 training:
+ ===> Epoch 12
+ - Average training metrics: accuracy={'accuracy': 0.99175}
+ - Average validation metrics: accuracy={'accuracy': 0.6877675840978593}
+Epoch 13 training:
+ ===> Epoch 13
+ - Average training metrics: accuracy={'accuracy': 0.992875}
+ - Average validation metrics: accuracy={'accuracy': 0.6770642201834862}
+Epoch 14 training:
+ ===> Epoch 14
+ - Average training metrics: accuracy={'accuracy': 0.994875}
+ - Average validation metrics: accuracy={'accuracy': 0.6779816513761467}
+Epoch 15 training:
+ ===> Epoch 15
+ - Average training metrics: accuracy={'accuracy': 0.996125}
+ - Average validation metrics: accuracy={'accuracy': 0.6865443425076453}
+Epoch 16 training:
+ ===> Epoch 16
+ - Average training metrics: accuracy={'accuracy': 0.997625}
+ - Average validation metrics: accuracy={'accuracy': 0.6844036697247706}
+Epoch 17 training:
+ ===> Epoch 17
+ - Average training metrics: accuracy={'accuracy': 0.997875}
+ - Average validation metrics: accuracy={'accuracy': 0.6850152905198776}
+Epoch 18 training:
+ ===> Epoch 18
+ - Average training metrics: accuracy={'accuracy': 0.99775}
+ - Average validation metrics: accuracy={'accuracy': 0.6807339449541284}
+Epoch 19 training:
+ ===> Epoch 19
+ - Average training metrics: accuracy={'accuracy': 0.998125}
+ - Average validation metrics: accuracy={'accuracy': 0.6834862385321101}
+Epoch 20 training:
+ ===> Epoch 20
+ - Average training metrics: accuracy={'accuracy': 0.9985}
+ - Average validation metrics: accuracy={'accuracy': 0.6825688073394496}
+torch.cuda.memory_allocated: 0.511710GB
+torch.cuda.memory_reserved: 3.746094GB
+torch.cuda.max_memory_reserved: 3.746094GB
+Sun Mar 12 00:49:56 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   56C    P0   242W / 300W |  43781MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   62C    P0   301W / 300W |  52743MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   39C    P0   139W / 300W |  17910MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   28C    P0    43W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   14   0   0  |   4758MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   14    0       8067      C   ...jeefzx3kp5jqdu/bin/python     4753MiB |
+|    1    7    0       8381      C   ...jeefzx3kp5jqdu/bin/python     4753MiB |
+|    1    8    0       8940      C   ...jeefzx3kp5jqdu/bin/python     4753MiB |
+|    1   11    0      10714      C   ...sification_env/bin/python     9339MiB |
+|    1    9    0      11014      C   ...jeefzx3kp5jqdu/bin/python     7409MiB |
+|    1   10    0      47261      C   ...sification_env/bin/python     9163MiB |
+|    1   12    0      47527      C   ...sification_env/bin/python     8167MiB |
+|    1   13    0      47536      C   ...sification_env/bin/python     9123MiB |
+|    2    7    0      47538      C   ...sification_env/bin/python     8419MiB |
+|    2    8    0      47540      C   ...sification_env/bin/python     9471MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6825688073394496}
+ - Average TEST metrics: accuracy={'accuracy': 0.6874562018220042}

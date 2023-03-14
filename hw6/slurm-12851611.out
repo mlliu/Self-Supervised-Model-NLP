@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "classification.py", line 268, in <module>
+    print("the value of small_subset: ",args.small_subset)
+NameError: name 'args' is not defined
+srun: error: icgpu02: task 0: Exited with exit code 1
