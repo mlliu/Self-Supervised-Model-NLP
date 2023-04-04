@@ -297,5 +297,6 @@ if __name__ == "__main__":
     plt.xlabel("iterations")
     plt.ylabel("accuracy")
     plt.legend()
-    plt.savefig('tranining_accuracy.png')
-    plt.show()
+    figure_name = "lr_"+str(args.lr)+"_epoch_"+str(args.num_epochs)+".png"
+    plt.savefig(figure_name)
+    #plt.show()
