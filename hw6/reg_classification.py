@@ -1,4 +1,5 @@
 import torch
+from torch import nn
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 from torch.utils.data import DataLoader
@@ -8,7 +9,8 @@ from transformers import get_scheduler
 from transformers import AutoModelForSequenceClassification
 import argparse
 import subprocess
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+from transformers import RagTokenizer, RagRetriever, RagTokenForGeneration
 
 
 def print_gpu_memory():
@@ -57,7 +59,7 @@ class BoolQADataset(torch.utils.data.Dataset):
         input_encoding = question + " [SEP] " + passage
 
         # encode_plus will encode the input and return a dictionary of tensors
-        encoded_review = self.tokenizer.encode_plus(
+        encoded_review = self.tokenizer(
             input_encoding,
             add_special_tokens=True,
             max_length=self.max_len,
@@ -67,15 +69,14 @@ class BoolQADataset(torch.utils.data.Dataset):
             padding="max_length",
             truncation=True
         )
-
+        #encoded_input = self.tokenizer(input_encoding,return_tensors="pt")
+        #encoded_output = self.tokenizer(answer,return_tensors = "pt")
         return {
             'input_ids': encoded_review['input_ids'][0],  # we only have one example in the batch
             'attention_mask': encoded_review['attention_mask'][0],
             # attention mask tells the model where tokens are padding
             'labels': torch.tensor(answer, dtype=torch.long)  # labels are the answers (yes/no)
         }
-
-
 def evaluate_model(model, dataloader, device):
     """ Evaluate a PyTorch Model
     :param torch.nn.Module model: the model to be evaluated
@@ -92,9 +93,9 @@ def evaluate_model(model, dataloader, device):
     for batch in dataloader:
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
-        output = model(input_ids=input_ids, attention_mask=attention_mask)
+        predictions= model(input_ids=input_ids, attention_mask=attention_mask)
 
-        predictions = output.logits
+        #predictions = output.logits
         predictions = torch.argmax(predictions, dim=1)
         dev_accuracy.add_batch(predictions=predictions, references=batch['labels'])
 
@@ -160,8 +161,8 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
 
-            output = mymodel(input_ids=input_ids,attention_mask=attention_mask) #logits
-            predictions = output.logits
+            predictions = mymodel(input_ids=input_ids,attention_mask = attention_mask) #logits
+            #predictions = output.logits
             model_loss = loss(predictions, batch['labels'].to(device))
 
             model_loss.backward()
@@ -192,6 +193,18 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
         print(f" - Average test metrics: accuracy={test_accuracy}")
     return train_acc,val_acc
 
+class Ragmodel(nn.Module):
+    def __init__(self):
+        super(Ragmodel, self).__init__()
+        retriever = RagRetriever.from_pretrained("facebook/rag-token-nq", index_name="exact", use_dummy_dataset=True)
+        self.model = RagTokenForGeneration.from_pretrained("facebook/rag-token-nq", retriever=retriever)
+        self.linear = nn.Linear(768,2)
+
+    def forward(self, input_ids, **kwargs):
+        output = self.model(input_ids, **kwargs)
+        logits = self.linear(output.question_encoder_last_hidden_state)
+        return logits
+
 def pre_process(model_name, batch_size, device, small_subset):
     # download dataset
     print("Loading the dataset ...")
@@ -221,8 +234,8 @@ def pre_process(model_name, batch_size, device, small_subset):
     max_len = 128
 
     print("Loading the tokenizer...")
-    mytokenizer = AutoTokenizer.from_pretrained(model_name)
-
+    #mytokenizer = AutoTokenizer.from_pretrained(model_name)
+    mytokenizer = RagTokenizer.from_pretrained("facebook/rag-token-nq")
     print("Loding the data into DS...")
     train_dataset = BoolQADataset(
         passages=list(dataset_train_subset['passage']),
@@ -253,7 +266,10 @@ def pre_process(model_name, batch_size, device, small_subset):
 
     # from Hugging Face (transformers), read their documentation to do this.
     print("Loading the model ...")
-    pretrained_model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
+    #pretrained_model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
+    #retriever = RagRetriever.from_pretrained("facebook/rag-token-nq", index_name="exact", use_dummy_dataset=True)
+    #pretrained_model = RagTokenForGeneration.from_pretrained("facebook/rag-token-nq", retriever=retriever)
+    pretrained_model = Ragmodel()
 
     print("Moving model to device ..." + str(device))
     pretrained_model.to(device)
@@ -295,7 +311,7 @@ if __name__ == "__main__":
 
     test_accuracy = evaluate_model(pretrained_model, test_dataloader, args.device)
     print(f" - Average TEST metrics: accuracy={test_accuracy}")
-
+    '''
     plt.figure(figsize=(10, 5))
     plt.title("Training accuracy")
     plt.plot(val_acc, label="val")
@@ -306,3 +322,4 @@ if __name__ == "__main__":
     figure_name = "lr_"+str(args.lr)+"_epoch_"+str(args.num_epochs)+".png"
     plt.savefig(figure_name)
     #plt.show()
+    '''
